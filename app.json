@@ -1,0 +1,12 @@
+{
+  "name": "lyricfy",
+  "displayName": "lyricfy",
+  "expo": {
+    "name": "lyricfy",
+    "slug": "lyricfy",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
