@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         padding: 40,
+        backgroundColor: '#e6e6e6',
     },
     title: {
         alignItems: "center",
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 160,
         color: "#a102c9",
-        fontSize: 38,
+        fontSize: 60,
         fontWeight: "bold",
     },
     subtitle: {
