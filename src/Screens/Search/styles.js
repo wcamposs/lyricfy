@@ -44,11 +44,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
     },
+    textMessage: {
+        color: "#FFF",
+        fontSize: 12,
+        fontWeight: "bold",
+    },
     buttonContainer: {
         flexDirection: "row",
         justifyContent: "center",
         marginBottom: 40,
-        marginTop: -50,
+        marginTop: -70,
     },
     button: {
         height: 60,
