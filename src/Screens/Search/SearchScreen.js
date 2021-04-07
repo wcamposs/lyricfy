@@ -39,7 +39,7 @@ function SearchScreen({ navigation }) {
             return results;
         }
         catch (error) {
-            return toast({ message: 'Lyrics not found', toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'alert-triangle', iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
+            return toast({ message: 'Lyrics not found', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'frown', iconSize: 26, iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
         }
     }
 
@@ -75,7 +75,7 @@ function SearchScreen({ navigation }) {
                 handleNavigateToLyricsPage(artist, song, lyrics);
             }
         } else {
-            return toast({ message: 'You must fill all fields!', toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'alert-triangle', iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
+            return toast({ message: 'You must fill all fields!', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'alert-triangle', iconSize: 26, iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
         }
     }
 
