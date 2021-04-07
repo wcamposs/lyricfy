@@ -26,6 +26,14 @@ const styles = StyleSheet.create({
         marginTop: 50,
         marginBottom: 110,
     },
+    inputLine: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    clearButton: {
+        marginBottom: 40,
+    },
     fieldTitle: {
         color: '#a102c9',
         fontSize: 22,
@@ -34,7 +42,7 @@ const styles = StyleSheet.create({
     },
     fieldInput: {
         marginBottom: 40,
-        width: 330,
+        width: 280,
         height: 50,
         borderRadius: 18,
         marginHorizontal: 10,

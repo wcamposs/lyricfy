@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Text, View } from 'react-native';
 import { TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { useToast } from 'react-native-styled-toast';
+import { Feather } from '@expo/vector-icons';
 
 // js
 import styles from './styles';
@@ -79,28 +80,57 @@ function SearchScreen({ navigation }) {
         }
     }
 
+    function cleanArtistField() {
+        setArtist('')
+    }
+
+    function cleanSongField() {
+        setSong('')
+    }
+
     function renderSearch() {
         return(
             <View>
                 <View style={styles.fieldsContainer}>
                     <Text style={styles.fieldTitle}>Artist</Text>
-                    <TextInput
-                        style={styles.fieldInput}
-                        multiline={false}
-                        autoCapitalize='none'
-                        autoCompleteType='off'
-                        onChangeText={handleSetArtist}
-                        value={artist}
-                    />
+                    <View style={styles.inputLine}>
+                        <TextInput
+                            style={styles.fieldInput}
+                            multiline={false}
+                            autoCapitalize='none'
+                            autoCompleteType='off'
+                            onChangeText={handleSetArtist}
+                            value={artist}
+                        />
+                        {!artist.length ? null : (
+                            <TouchableOpacity
+                                onPress={cleanArtistField}
+                                style={styles.clearButton}
+                            >
+                                <Feather name="x" size={22} color="#000"/>
+                            </TouchableOpacity>
+                        )}
+                    </View>
+
                     <Text style={styles.fieldTitle}>Song</Text>
-                    <TextInput
-                        style={styles.fieldInput}
-                        multiline={false}
-                        autoCapitalize='none'
-                        autoCompleteType='off'
-                        onChangeText={handleSetSong}
-                        value={song}
-                    />
+                    <View style={styles.inputLine}>
+                        <TextInput
+                            style={styles.fieldInput}
+                            multiline={false}
+                            autoCapitalize='none'
+                            autoCompleteType='off'
+                            onChangeText={handleSetSong}
+                            value={song}
+                        />
+                        {!song.length ? null : (
+                            <TouchableOpacity
+                                onPress={cleanSongField}
+                                style={styles.clearButton}
+                            >
+                                <Feather name="x" size={22} color="#000"/>
+                            </TouchableOpacity>
+                        )}
+                    </View>
                 </View>
 
                 <View style={styles.buttonContainer}>
@@ -126,7 +156,7 @@ function SearchScreen({ navigation }) {
             style={styles.container}
         >
             <Header
-                title="Search screen"
+                title="Search"
             />
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <Card

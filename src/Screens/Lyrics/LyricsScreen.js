@@ -43,7 +43,7 @@ function LyricsScreen({ route }) {
     return(
         <SafeAreaView style={styles.container}>
             <Header
-                title='Lyrics screen'
+                title='Lyrics'
             />
             <Card
                 style={styles.cardContainer}
