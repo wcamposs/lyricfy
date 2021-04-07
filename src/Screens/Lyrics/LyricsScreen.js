@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Dimensions, ScrollView, SafeAreaView, Text, View } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 
 import Card from '../../Components/BaseComponents/Card';
 import Header from '../../Components/BaseComponents/Header';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function LyricsScreen({ route }) {
     const artist = route.params.artist;
     const lyrics = route.params.lyrics;
     const song = route.params.song;
 
+    const minFontSize = 10;
+    const maxFontSize = 30;
+
     const { height } = Dimensions.get('window');
+    const [lyricsSettings, setLyricsSettings] = useState(false);
+    const [fontSize, setfontSize] = useState(16);
     // const [screenHeigth, setScreenHeigth] = useState(0);
 
     // const onContentSizeChange = (contentHeigth) => {
@@ -22,17 +29,74 @@ function LyricsScreen({ route }) {
 
     }, []);
 
+    function increaseFontSize() {
+        const newFontSize = fontSize + 1;
+        if (newFontSize < maxFontSize) {
+            setfontSize(newFontSize);
+        }
+    }
+
+    function decreaseFontSize() {
+        const newFontSize = fontSize - 1;
+
+        if (newFontSize > minFontSize) {
+            setfontSize(newFontSize);
+        }
+    }
+
+    function resetFontSize() {
+        setfontSize(16);
+    }
+
+    function enableLyricsSettings() {
+        setLyricsSettings(!lyricsSettings)
+    }
+
     function cardChildren() {
         // const scrollEnabled = screenHeigth > height;
         return(
             <View style={styles.lyricsContainer}>
+                <View style={styles.lyricsSettingsLine}>
+                    <View style={styles.lyricsSettings}>
+                        {!lyricsSettings ? null : (
+                            <>
+                                <TouchableOpacity
+                                    style={styles.sizeControllerButton}
+                                    onPress={decreaseFontSize}
+                                >
+                                    <Feather name="minus-circle" size={24} color="#a102c9"/>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    style={styles.sizeControllerButton}
+                                    onPress={increaseFontSize}
+                                >
+                                    <Feather name="plus-circle" size={24} color="#a102c9"/>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    style={styles.sizeControllerButton}
+                                    onPress={resetFontSize}
+                                >
+                                    <Feather name="refresh-ccw" size={22} color="#a102c9"/>
+                                </TouchableOpacity>
+                            </>
+                        )}
+                    </View>
+                    <View>
+                        <TouchableOpacity
+                            style={styles.sizeControllerButton}
+                            onPress={enableLyricsSettings}
+                        >
+                            <Feather name="settings" size={22} color="#a102c9"/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
                 <ScrollView
                 scrollEnabled={true}
                 // onContentSizeChange={onContentSizeChange}
                 >
                     <View style={styles.childContainer}>
                         <View style={styles.lyricsContainer}>
-                            <Text style={styles.lyricsText}>{`${lyrics}`}</Text>
+                            <Text style={[styles.lyricsText, { fontSize: fontSize }]}>{`${lyrics}`}</Text>
                         </View>
                     </View>
                 </ScrollView>

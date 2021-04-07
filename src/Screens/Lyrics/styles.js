@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         marginLeft: 12,
     },
     childContainer: {
-        marginTop: 80,
+        marginTop: 60,
     },
     cardTitle: {
         color: '#a102c9',
@@ -22,13 +22,26 @@ const styles = StyleSheet.create({
         lineHeight: 32,
         maxWidth: 300,
     },
+    lyricsSettingsLine: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        marginTop: -20,
+        marginBottom: 10,
+        marginHorizontal: 60,
+    },
+    lyricsSettings: {
+        justifyContent: 'center',
+        flexDirection: 'row',
+    },
+    sizeControllerButton: {
+        marginRight: 20,
+    },
     lyricsContainer: {
         marginVertical: 10,
         marginHorizontal: 10,
     },
     lyricsText: {
-        marginTop: -90,
-        fontSize: 16,
+        marginTop: -70,
         fontWeight: 'normal',
     },
 });
