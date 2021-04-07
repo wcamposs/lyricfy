@@ -6,6 +6,7 @@ import { useToast } from 'react-native-styled-toast';
 import { Feather } from '@expo/vector-icons';
 
 // js
+import colors from '../../Colors/colors';
 import styles from './styles';
 import api from '../../Services/api';
 
@@ -40,7 +41,7 @@ function SearchScreen({ navigation }) {
             return results;
         }
         catch (error) {
-            return toast({ message: 'Lyrics not found', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'frown', iconSize: 26, iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
+            return toast({ message: 'Lyrics not found', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: colors.danger }, color: colors.tertiary, iconName: 'frown', iconSize: 26, iconColor: colors.tertiary, closeButtonStyles: { bg: colors.danger}, closeIconColor: colors.tertiary, hideAccent: true});
         }
     }
 
@@ -76,7 +77,7 @@ function SearchScreen({ navigation }) {
                 handleNavigateToLyricsPage(artist, song, lyrics);
             }
         } else {
-            return toast({ message: 'You must fill all fields!', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'alert-triangle', iconSize: 26, iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
+            return toast({ message: 'You must fill all fields!', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: colors.danger }, color: colors.tertiary, iconName: 'alert-triangle', iconSize: 26, iconColor: colors.tertiary, closeButtonStyles: { bg: colors.danger}, closeIconColor: colors.tertiary, hideAccent: true});
         }
     }
 
@@ -86,6 +87,10 @@ function SearchScreen({ navigation }) {
 
     function cleanSongField() {
         setSong('')
+    }
+
+    function dismissKeyboard() {
+        Keyboard.dismiss()
     }
 
     function renderSearch() {
@@ -107,7 +112,7 @@ function SearchScreen({ navigation }) {
                                 onPress={cleanArtistField}
                                 style={styles.clearButton}
                             >
-                                <Feather name="x" size={22} color="#000"/>
+                                <Feather name="x" size={22} color={colors.secondary}/>
                             </TouchableOpacity>
                         )}
                     </View>
@@ -127,7 +132,7 @@ function SearchScreen({ navigation }) {
                                 onPress={cleanSongField}
                                 style={styles.clearButton}
                             >
-                                <Feather name="x" size={22} color="#000"/>
+                                <Feather name="x" size={22} color={colors.secondary}/>
                             </TouchableOpacity>
                         )}
                     </View>
@@ -142,7 +147,7 @@ function SearchScreen({ navigation }) {
                         {!loading ? (
                             <Text style={styles.buttonText}>Search</Text>
                         ) : (
-                            <ActivityIndicator size="large" color="#fff" />
+                            <ActivityIndicator size="large" color={colors.tertiary} />
                         )}
                     </TouchableOpacity>
                 </View>
@@ -158,7 +163,7 @@ function SearchScreen({ navigation }) {
             <Header
                 title="Search"
             />
-            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <TouchableWithoutFeedback onPress={dismissKeyboard}>
                 <Card
                     style={styles.cardContainer}
                     styleTitle={styles.cardTitle}

@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../Colors/colors';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e6e6e6',
+        backgroundColor: colors.background,
     },
     cardContainer: {
         // flex: 1,
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
         marginTop: 60,
     },
     cardTitle: {
-        color: '#a102c9',
+        color: colors.primary,
         fontSize: 26,
         fontWeight: 'bold',
         lineHeight: 32,
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     },
     lyricsText: {
         marginTop: -70,
+        color: colors.secondary,
         fontWeight: 'normal',
     },
 });

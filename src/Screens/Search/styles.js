@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../Colors/colors';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e6e6e6',
+        backgroundColor: colors.background,
     },
     cardContainer: {
         height: 615,
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
     },
     cardTitle: {
         marginTop: 30,
-        color: '#a102c9',
+        color: colors.primary,
         fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         marginBottom: 40,
     },
     fieldTitle: {
-        color: '#a102c9',
+        color: colors.primary,
         fontSize: 22,
         fontWeight: 'bold',
         marginBottom: 10,
@@ -48,12 +49,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         textAlign: 'center',
         backgroundColor: '#e6e6e6',
-        color: '#000',
+        color: colors.secondary,
         fontWeight: 'bold',
         fontSize: 16,
     },
     textMessage: {
-        color: "#FFF",
+        color: colors.tertiary,
         fontSize: 12,
         fontWeight: "bold",
     },
@@ -66,13 +67,13 @@ const styles = StyleSheet.create({
     button: {
         height: 60,
         width: 240,
-        backgroundColor: "#a102c9",
+        backgroundColor: colors.primary,
         borderRadius: 32,
         alignItems: "center",
         justifyContent: "center",
     },
     buttonText: {
-        color: "#FFF",
+        color: colors.tertiary,
         fontSize: 20,
         fontWeight: "bold",
     },

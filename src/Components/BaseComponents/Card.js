@@ -1,5 +1,9 @@
+// libraries
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+
+// js
+import colors from '../../Colors/colors';
 
 interface Props {
     children: any,
@@ -40,7 +44,7 @@ function Card(props: Props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#FFF',
+        backgroundColor: colors.tertiary,
         borderRadius: 20,
         marginHorizontal: 8,
         marginVertical: 4,
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
 
         ...Platform.select({
             ios: {
-                shadowColor: '#c9c9c9',
+                shadowColor: colors.shadow,
                 shadowOffset: { height: 1, width: 1 },
                 shadowOpacity: 0.5,
                 shadowRadius: 2,

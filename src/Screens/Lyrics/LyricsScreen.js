@@ -1,12 +1,17 @@
+// libraries
 import React, { useEffect, useState } from 'react';
 import { Dimensions, ScrollView, SafeAreaView, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
+// js
+import colors from '../../Colors/colors';
 import styles from './styles';
 
+// components
 import Card from '../../Components/BaseComponents/Card';
 import Header from '../../Components/BaseComponents/Header';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
 
 function LyricsScreen({ route }) {
     const artist = route.params.artist;
@@ -64,19 +69,19 @@ function LyricsScreen({ route }) {
                                     style={styles.sizeControllerButton}
                                     onPress={decreaseFontSize}
                                 >
-                                    <Feather name="minus-circle" size={24} color="#a102c9"/>
+                                    <Feather name="minus-circle" size={24} color={colors.primary}/>
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     style={styles.sizeControllerButton}
                                     onPress={increaseFontSize}
                                 >
-                                    <Feather name="plus-circle" size={24} color="#a102c9"/>
+                                    <Feather name="plus-circle" size={24} color={colors.primary}/>
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     style={styles.sizeControllerButton}
                                     onPress={resetFontSize}
                                 >
-                                    <Feather name="refresh-ccw" size={22} color="#a102c9"/>
+                                    <Feather name="refresh-ccw" size={22} color={colors.primary}/>
                                 </TouchableOpacity>
                             </>
                         )}
@@ -84,7 +89,7 @@ function LyricsScreen({ route }) {
                             style={styles.sizeControllerButton}
                             onPress={enableLyricsSettings}
                         >
-                            <Feather name="settings" size={24} color="#a102c9"/>
+                            <Feather name="settings" size={24} color={colors.primary}/>
                         </TouchableOpacity>
                     </View>
                 </View>

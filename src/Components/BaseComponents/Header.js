@@ -5,6 +5,9 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
+// js
+import colors from '../../Colors/colors';
+
 interface PageHeaderProps {
     title: String,
     headerRight?: ReactNode,
@@ -27,7 +30,7 @@ const Header: React.FunctionComponent<PageHeaderProps> = ({
                 <BorderlessButton
                     onPress={handleGoBack}
                 >
-                    <Feather name="arrow-left" size={30} color="#FFF"/>
+                    <Feather name="arrow-left" size={30} color={colors.tertiary}/>
                 </BorderlessButton>
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.logoText}></Text>
@@ -45,7 +48,7 @@ const Header: React.FunctionComponent<PageHeaderProps> = ({
 const styles = StyleSheet.create({
     container: {
         paddingTop: 10,
-        backgroundColor: "#a102c9",
+        backgroundColor: colors.primary,
     },
     topBar: {
         marginHorizontal: 10,
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     logoText: {
-    color: "#FFF",
+    color: colors.tertiary,
     fontSize: 16,
     textAlign: 'center',
     },
@@ -66,12 +69,12 @@ const styles = StyleSheet.create({
     },
 
     title: {
-    color: "#FFF",
+    color: colors.tertiary,
     fontSize: 24,
     fontWeight: 'bold',
     lineHeight: 32,
     maxWidth: 160,
-    marginVertical: 40,
+    marginVertical: 30,
     }
 });
 
