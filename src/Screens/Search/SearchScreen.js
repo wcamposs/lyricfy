@@ -28,7 +28,6 @@ function SearchScreen({ navigation }) {
 
     useEffect(() => {
         if (lyrics !== '' && lyrics !== undefined) {
-            console.log(lyrics)
             handleNavigateToLyricsPage(artist, song, lyrics);
         }
     }, [lyrics]);
@@ -40,7 +39,6 @@ function SearchScreen({ navigation }) {
             return results;
         }
         catch (error) {
-            console.log(error);
             return toast({ message: 'Lyrics not found', toastStyles: { borderRadius: 16, bg: 'red' }, color: '#fff', iconName: 'alert-triangle', iconColor: '#fff', closeButtonStyles: { bg: 'red'}, closeIconColor: '#fff', hideAccent: true});
         }
     }
