@@ -3,24 +3,28 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: '#e6e6e6',
-        marginTop: 90, // Remove it when add header
     },
     cardContainer: {
-        height: 600,
+        height: 615,
         width: 370,
-        marginTop: 25,
+        marginTop: 10,
+        marginLeft: 10,
     },
     cardTitle: {
-        marginTop: 80,
+        marginTop: 30,
         color: '#a102c9',
+        fontSize: 30,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        lineHeight: 32,
+        maxWidth: 300,
     },
     fieldsContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 80,
+        marginTop: 50,
+        marginBottom: 110,
     },
     fieldTitle: {
         color: '#a102c9',

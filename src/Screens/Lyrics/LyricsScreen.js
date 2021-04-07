@@ -4,6 +4,7 @@ import { Dimensions, ScrollView, SafeAreaView, Text, View } from 'react-native';
 import styles from './styles';
 
 import Card from '../../Components/BaseComponents/Card';
+import Header from '../../Components/BaseComponents/Header';
 
 function LyricsScreen({ route }) {
     const artist = route.params.artist;
@@ -11,23 +12,23 @@ function LyricsScreen({ route }) {
     const song = route.params.song;
 
     const { height } = Dimensions.get('window');
-    const [screenHeigth, setScreenHeigth] = useState(0);
+    // const [screenHeigth, setScreenHeigth] = useState(0);
 
-    const onContentSizeChange = (contentHeigth) => {
-        setScreenHeigth({ screenHeigth: contentHeigth });
-    }
+    // const onContentSizeChange = (contentHeigth) => {
+    //     setScreenHeigth({ screenHeigth: contentHeigth });
+    // }
 
     useEffect(() => {
 
     }, []);
 
     function cardChildren() {
-        const scrollEnabled = screenHeigth > height;
+        // const scrollEnabled = screenHeigth > height;
         return(
-            <>
-                <ScrollView 
-                scrollEnabled={scrollEnabled}
-                onContentSizeChange={onContentSizeChange}
+            <View style={styles.lyricsContainer}>
+                <ScrollView
+                scrollEnabled={true}
+                // onContentSizeChange={onContentSizeChange}
                 >
                     <View style={styles.childContainer}>
                         <View style={styles.lyricsContainer}>
@@ -35,21 +36,22 @@ function LyricsScreen({ route }) {
                         </View>
                     </View>
                 </ScrollView>
-            </>
-        ); 
+            </View>
+        );
     }
 
     return(
-        <SafeAreaView>
-            <View style={styles.container}>
-                <Card
-                    style={styles.cardContainer}
-                    styleTitle={styles.cardTitle}
-                    title={song}
-                    subtitle={artist}
-                    children={cardChildren()}
-                />
-        </View>
+        <SafeAreaView style={styles.container}>
+            <Header
+                title='Lyrics screen'
+            />
+            <Card
+                style={styles.cardContainer}
+                styleTitle={styles.cardTitle}
+                title={song}
+                subtitle={artist}
+                children={cardChildren()}
+            />
         </SafeAreaView>
     );
 }

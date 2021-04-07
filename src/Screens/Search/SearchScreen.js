@@ -1,22 +1,28 @@
+// libraries
 import React, { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
-
-import styles from './styles';
-
-import Card from '../../Components/BaseComponents/Card';
+import { KeyboardAvoidingView, Text, View } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
+// js
+import styles from './styles';
 import api from '../../Services/api';
 
+// components
+import Card from '../../Components/BaseComponents/Card';
+import Header from '../../Components/BaseComponents/Header';
+import { Keyboard } from 'react-native';
+
+
 function SearchScreen({ navigation }) {
-    
     const [artist, setArtist] = useState('');
     const [lyrics, setLyrics] = useState('');
     const [song, setSong] = useState('');
 
     useEffect(() => {
-
-    }, []);
+        if (lyrics !== '') {
+            handleNavigateToLyricsPage(artist, song, lyrics);
+        }
+    }, [lyrics]);
 
     async function getLyrics(artist, song) {
         try {
@@ -25,7 +31,8 @@ function SearchScreen({ navigation }) {
             return results;
         }
         catch (error) {
-            console.log(error)
+            console.log(error);
+            return '';
         }
     }
 
@@ -66,7 +73,7 @@ function SearchScreen({ navigation }) {
             <View>
                 <View style={styles.fieldsContainer}>
                     <Text style={styles.fieldTitle}>Artist</Text>
-                    <TextInput 
+                    <TextInput
                         style={styles.fieldInput}
                         multiline={false}
                         autoCapitalize='none'
@@ -75,7 +82,7 @@ function SearchScreen({ navigation }) {
                         value={artist}
                     />
                     <Text style={styles.fieldTitle}>Song</Text>
-                    <TextInput 
+                    <TextInput
                         style={styles.fieldInput}
                         multiline={false}
                         autoCapitalize='none'
@@ -86,7 +93,7 @@ function SearchScreen({ navigation }) {
                 </View>
 
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         onPress={getLyricsAndNavigate}
                         style={styles.button}
                     >
@@ -98,14 +105,20 @@ function SearchScreen({ navigation }) {
     }
 
     return(
-        <View style={styles.container}>
-            <Card 
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}
+        >
+            <Header
+                title="Search screen"
+            />
+            <Card
                 style={styles.cardContainer}
                 styleTitle={styles.cardTitle}
                 title="Search for an artist and song"
                 children={renderSearch()}
             />
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 

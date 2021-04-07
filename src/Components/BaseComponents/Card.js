@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
         }),
     },
     containerChildren: {
-        marginTop: 10,
+        flex: 1,
+        marginTop: -400,
     },
     titleContainer: {
         flexDirection: 'column',
