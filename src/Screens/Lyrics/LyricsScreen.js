@@ -84,7 +84,7 @@ function LyricsScreen({ route }) {
                             style={styles.sizeControllerButton}
                             onPress={enableLyricsSettings}
                         >
-                            <Feather name="settings" size={22} color="#a102c9"/>
+                            <Feather name="settings" size={24} color="#a102c9"/>
                         </TouchableOpacity>
                     </View>
                 </View>
