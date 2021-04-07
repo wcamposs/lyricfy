@@ -23,18 +23,17 @@ const styles = StyleSheet.create({
         maxWidth: 300,
     },
     lyricsSettingsLine: {
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         flexDirection: 'row',
         marginTop: -20,
         marginBottom: 10,
-        marginHorizontal: 60,
     },
     lyricsSettings: {
         justifyContent: 'center',
         flexDirection: 'row',
     },
     sizeControllerButton: {
-        marginRight: 20,
+        marginHorizontal: 10,
     },
     lyricsContainer: {
         marginVertical: 10,

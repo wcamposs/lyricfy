@@ -80,8 +80,6 @@ function LyricsScreen({ route }) {
                                 </TouchableOpacity>
                             </>
                         )}
-                    </View>
-                    <View>
                         <TouchableOpacity
                             style={styles.sizeControllerButton}
                             onPress={enableLyricsSettings}
