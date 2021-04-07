@@ -6,12 +6,14 @@ interface Props {
     heigth: Number,
     style?: any,
     styleTitle?: String,
+    styleSubtitle?: String,
     title?: String,
+    subtitle?: String,
     width: Number,
 }
 
 function Card(props: Props) {
-    const { children, style, styleTitle, title} = props;
+    const { children, style, styleTitle, styleSubtitle, subtitle, title} = props;
 
     function renderChildren() {
         return(
@@ -25,8 +27,9 @@ function Card(props: Props) {
         <View style={[styles.container, style]}>
             {title && (
                 <>
-                    <View style={styles.flex}>
+                    <View style={styles.titleContainer}>
                         <Text style={[styles.title, styleTitle]}>{title}</Text>
+                        <Text style={[styles.subtitle, styleSubtitle]}>{subtitle}</Text>
                     </View>
                 </>
             )}
@@ -58,15 +61,19 @@ const styles = StyleSheet.create({
     containerChildren: {
         marginTop: 10,
     },
-    flex: {
+    titleContainer: {
+        flexDirection: 'column',
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
+        alignItems: 'center',
     },
     title: {
         fontWeight: 'bold',
         fontSize: 26,
-        marginVertical: 18,
+        marginTop: 10,
+    },
+    subtitle: {
+        fontWeight: 'bold',
+        fontSize: 15,
     },
 });
 
