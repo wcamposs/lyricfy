@@ -31,6 +31,7 @@ function SearchScreen({ navigation }) {
         if (lyrics !== '' && lyrics !== undefined) {
             handleNavigateToLyricsPage(artist, song, lyrics);
         }
+        setLyrics('');
     }, [lyrics]);
 
     async function getLyrics(artist, song) {
