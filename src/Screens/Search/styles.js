@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     cardContainer: {
         height: 615,
         width: 370,
-        marginTop: 10,
+        marginTop: 20,
         marginLeft: 10,
     },
     cardTitle: {
@@ -31,9 +31,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        width: 320,
+        height: 50,
+        borderRadius: 18,
+        backgroundColor: colors.background,
+        marginBottom: 40,
     },
     clearButton: {
-        marginBottom: 40,
+        marginRight: 20,
     },
     fieldTitle: {
         color: colors.primary,
@@ -42,13 +47,12 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     fieldInput: {
-        marginBottom: 40,
         width: 280,
         height: 50,
         borderRadius: 18,
         marginHorizontal: 10,
         textAlign: 'center',
-        backgroundColor: '#e6e6e6',
+        backgroundColor: colors.background,
         color: colors.secondary,
         fontWeight: 'bold',
         fontSize: 16,
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 60,
-        width: 240,
+        width: 320,
         backgroundColor: colors.primary,
         borderRadius: 32,
         alignItems: "center",

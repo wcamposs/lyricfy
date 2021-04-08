@@ -14,7 +14,6 @@ import api from '../../Services/api';
 import Card from '../../Components/BaseComponents/Card';
 import Header from '../../Components/BaseComponents/Header';
 import { Keyboard } from 'react-native';
-import { background } from 'styled-system';
 
 
 function SearchScreen({ navigation }) {

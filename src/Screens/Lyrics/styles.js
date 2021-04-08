@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.background,
     },
     cardContainer: {
-        // flex: 1,
-        height: 615,
+        height: 635,
         width: 370,
         marginTop: 10,
         marginLeft: 12,
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
     lyricsSettingsLine: {
         justifyContent: 'center',
         flexDirection: 'row',
-        marginTop: -20,
+        marginTop: -30,
         marginBottom: 10,
     },
     lyricsSettings: {
