@@ -4,9 +4,22 @@
   "expo": {
     "name": "lyricfy",
     "slug": "lyricfy",
+    "icon": "./assets/icon.png",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#a502cf"
+    }
   }
 }
