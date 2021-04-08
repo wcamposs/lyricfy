@@ -1,22 +1,24 @@
+// libraries
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { AppLoading } from "expo";
+import AppLoading from 'expo';
 import { ThemeProvider } from 'styled-components';
 import { ToastProvider } from 'react-native-styled-toast';
 
-// import {
-//   useFonts,
-//   Archivo_400Regular,
-//   Archivo_700Bold,
-// } from "@expo-google-fonts/archivo";
+// fonts
+import {
+  useFonts,
+  Oswald_400Regular,
+  Oswald_700Bold,
+} from "@expo-google-fonts/oswald";
 
 import AppStack from "./src/Routes/AppStack";
 
 export default function App() {
-  // let [fontsLoaded] = useFonts({
-  //   Archivo_400Regular,
-  //   Archivo_700Bold,
-  // });
+  let [fontsLoaded] = useFonts({
+    Oswald_400Regular,
+    Oswald_700Bold,
+  });
 
   const theme = {
     fg: "palevioletred",
@@ -36,16 +38,17 @@ export default function App() {
     }
   };
 
+
   // if (!fontsLoaded) {
   //   return <AppLoading />;
   // } else {
-  return (
+    return (
       <ThemeProvider theme={theme}>
         <ToastProvider maxToasts={1} offset={-10} position="BOTTOM">
           <StatusBar style="auto" />
           <AppStack />
         </ToastProvider>
       </ThemeProvider>
-  );
+    );
   // }
 }
