@@ -1,9 +1,9 @@
 {
-  "name": "lyricfy",
-  "displayName": "lyricfy",
+  "name": "Lyricfy",
+  "displayName": "Lyricfy",
   "expo": {
-    "name": "lyricfy",
-    "slug": "lyricfy",
+    "name": "Lyricfy",
+    "slug": "Lyricfy",
     "icon": "./assets/icon.png",
     "version": "1.0.0",
     "assetBundlePatterns": [
