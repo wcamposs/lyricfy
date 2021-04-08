@@ -2,6 +2,8 @@
 
 Lyrics for you!
 
+![](https://imgur.com/mqlQYyF)
+
 ## Description:
 
 Application developed in React Native with Expo and Axios.
