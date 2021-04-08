@@ -99,7 +99,7 @@ function SearchScreen({ navigation }) {
                     <Text style={styles.fieldTitle}>Artist</Text>
                     <View style={styles.inputLine}>
                         <TextInput
-                            style={styles.fieldInput}
+                            style={[styles.fieldArtistInput, artist.length ? { marginLeft: 22, marginRight: -10 } : { marginLeft: 0 }]}
                             multiline={false}
                             autoCapitalize='none'
                             autoCompleteType='off'
@@ -119,7 +119,7 @@ function SearchScreen({ navigation }) {
                     <Text style={styles.fieldTitle}>Song</Text>
                     <View style={styles.inputLine}>
                         <TextInput
-                            style={styles.fieldInput}
+                            style={[styles.fieldSongInput, song.length ? { marginLeft: 22, marginRight: -10 } : { marginLeft: 0 }]}
                             multiline={false}
                             autoCapitalize='none'
                             autoCompleteType='off'

@@ -1,4 +1,8 @@
+// libraries
 import { StyleSheet } from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+// js
 import colors from '../../Colors/colors';
 
 const styles = StyleSheet.create({
@@ -7,10 +11,9 @@ const styles = StyleSheet.create({
         backgroundColor: colors.background,
     },
     cardContainer: {
-        height: 635,
-        width: 370,
-        marginTop: 10,
-        marginLeft: 12,
+        height: hp('87%'),
+        width: wp('96%'),
+        marginTop: 12,
     },
     childContainer: {
         marginTop: 60,
@@ -20,12 +23,12 @@ const styles = StyleSheet.create({
         fontSize: 26,
         fontWeight: 'bold',
         lineHeight: 32,
-        maxWidth: 300,
+        maxWidth: wp('40%'),
     },
     lyricsSettingsLine: {
         justifyContent: 'center',
         flexDirection: 'row',
-        marginTop: -30,
+        marginTop: -60,
         marginBottom: 10,
     },
     lyricsSettings: {
@@ -36,7 +39,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     },
     lyricsContainer: {
-        marginVertical: 10,
+        marginTop: 20,
         marginHorizontal: 10,
     },
     lyricsText: {

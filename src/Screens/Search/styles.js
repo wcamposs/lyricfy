@@ -1,4 +1,8 @@
+// libraries
 import { StyleSheet } from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+// js
 import colors from '../../Colors/colors';
 
 const styles = StyleSheet.create({
@@ -7,10 +11,9 @@ const styles = StyleSheet.create({
         backgroundColor: colors.background,
     },
     cardContainer: {
-        height: 615,
-        width: 370,
-        marginTop: 20,
-        marginLeft: 10,
+        height: hp('87%'),
+        width: wp('96%'),
+        marginVertical: 12,
     },
     cardTitle: {
         marginTop: 30,
@@ -46,7 +49,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
     },
-    fieldInput: {
+    fieldArtistInput: {
+        width: 280,
+        height: 50,
+        borderRadius: 18,
+        marginHorizontal: 10,
+        textAlign: 'center',
+        backgroundColor: colors.background,
+        color: colors.secondary,
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    fieldSongInput: {
         width: 280,
         height: 50,
         borderRadius: 18,

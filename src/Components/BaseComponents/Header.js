@@ -1,5 +1,5 @@
 // libraries
-import React, { ReactNode, Children } from 'react';
+import React, { ReactNode } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -47,7 +47,7 @@ const Header: React.FunctionComponent<PageHeaderProps> = ({
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 10,
+        paddingTop: 20,
         backgroundColor: colors.primary,
     },
     topBar: {
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     lineHeight: 32,
     maxWidth: 160,
+    marginRight: 36,
     marginVertical: 30,
     }
 });
