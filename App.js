@@ -42,13 +42,13 @@ export default function App() {
   // if (!fontsLoaded) {
   //   return <AppLoading />;
   // } else {
-    return (
-      <ThemeProvider theme={theme}>
-        <ToastProvider maxToasts={1} offset={-10} position="BOTTOM">
-          <StatusBar style="auto" />
-          <AppStack />
-        </ToastProvider>
-      </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <ToastProvider maxToasts={1} offset={-10} position="BOTTOM">
+        <StatusBar style="light" />
+        <AppStack />
+      </ToastProvider>
+    </ThemeProvider>
+  );
   // }
 }

@@ -15,7 +15,6 @@ import Card from '../../Components/BaseComponents/Card';
 import Header from '../../Components/BaseComponents/Header';
 import { Keyboard } from 'react-native';
 
-
 function SearchScreen({ navigation }) {
     const [artist, setArtist] = useState('');
     const [lyrics, setLyrics] = useState('');
