@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     image: {
         width: 64,
         height: 64,
+        borderRadius: 8,
     },
     title: {
         fontFamily: fonts.title,
