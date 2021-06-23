@@ -1,6 +1,6 @@
 // libraries
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, View } from 'react-native';
 
 // js
 import colors from '../../Colors/colors';
@@ -17,10 +17,10 @@ interface Props {
 }
 
 function Card(props: Props) {
-    const { children, style, styleTitle, styleSubtitle, subtitle, title} = props;
+    const { children, style, styleTitle, styleSubtitle, subtitle, title, albumArt } = props;
 
     function renderChildren() {
-        return(
+        return (
             <View style={styles.containerChildren}>
                 {children}
             </View>
@@ -30,12 +30,15 @@ function Card(props: Props) {
     return (
         <View style={[styles.container, style]}>
             {title && (
-                <>
+                <View style={styles.headerRowContainer}>
+                    {!albumArt ? null : (
+                        <Image source={{ uri: albumArt }} style={styles.image} />
+                    )}
                     <View style={styles.titleContainer}>
                         <Text style={[styles.title, styleTitle]}>{title}</Text>
                         <Text style={[styles.subtitle, styleSubtitle]}>{subtitle}</Text>
                     </View>
-                </>
+                </View>
             )}
             {renderChildren()}
         </View>
@@ -45,7 +48,7 @@ function Card(props: Props) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.tertiary,
-        borderRadius: 20,
+        borderRadius: 8,
         marginHorizontal: 8,
         marginVertical: 4,
         padding: 10,
@@ -64,17 +67,28 @@ const styles = StyleSheet.create({
     },
     containerChildren: {
         flex: 1,
-        marginTop: -400,
+        marginTop: 60,
+    },
+    headerRowContainer: {
+        marginTop: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 20,
     },
     titleContainer: {
         flexDirection: 'column',
         flex: 1,
         alignItems: 'center',
+        marginTop: 5,
+        marginRight: 70,
+    },
+    image: {
+        width: 64,
+        height: 64,
     },
     title: {
         fontWeight: 'bold',
         fontSize: 26,
-        marginTop: 10,
     },
     subtitle: {
         fontWeight: 'bold',

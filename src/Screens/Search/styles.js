@@ -1,6 +1,6 @@
 // libraries
 import { StyleSheet } from 'react-native';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 // js
 import colors from '../../Colors/colors';
@@ -11,14 +11,15 @@ const styles = StyleSheet.create({
         backgroundColor: colors.primary,
     },
     cardContainer: {
-        height: hp('87%'),
+        height: hp('83%'),
         width: wp('96%'),
-        marginVertical: 12,
+        marginTop: 8,
     },
     cardTitle: {
-        marginTop: 30,
+        paddingLeft: 50,
+        width: '100%',
         color: colors.primary,
-        fontSize: 30,
+        fontSize: 28,
         textAlign: 'center',
         fontWeight: 'bold',
         lineHeight: 32,
@@ -27,7 +28,6 @@ const styles = StyleSheet.create({
     fieldsContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50,
         marginBottom: 110,
     },
     inputLine: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 320,
         height: 50,
-        borderRadius: 18,
+        borderRadius: 12,
         backgroundColor: colors.background,
         marginBottom: 40,
     },
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     fieldArtistInput: {
         width: 280,
         height: 50,
-        borderRadius: 18,
+        borderRadius: 12,
         marginHorizontal: 10,
         textAlign: 'center',
         backgroundColor: colors.background,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     fieldSongInput: {
         width: 280,
         height: 50,
-        borderRadius: 18,
+        borderRadius: 12,
         marginHorizontal: 10,
         textAlign: 'center',
         backgroundColor: colors.background,
@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
         height: 60,
         width: 320,
         backgroundColor: colors.primary,
-        borderRadius: 32,
+        borderRadius: 16,
+        marginTop: 20,
         alignItems: "center",
         justifyContent: "center",
     },

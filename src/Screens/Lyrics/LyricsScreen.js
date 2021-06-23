@@ -31,7 +31,7 @@ function LyricsScreen({ route }) {
     // }
 
     useEffect(() => {
-
+        // console.log(lyrics);
     }, []);
 
     function increaseFontSize() {
@@ -54,12 +54,12 @@ function LyricsScreen({ route }) {
     }
 
     function enableLyricsSettings() {
-        setLyricsSettings(!lyricsSettings)
+        setLyricsSettings(!lyricsSettings);
     }
 
     function cardChildren() {
         // const scrollEnabled = screenHeigth > height;
-        return(
+        return (
             <View style={styles.lyricsContainer}>
                 <View style={styles.lyricsSettingsLine}>
                     <View style={styles.lyricsSettings}>
@@ -69,19 +69,19 @@ function LyricsScreen({ route }) {
                                     style={styles.sizeControllerButton}
                                     onPress={decreaseFontSize}
                                 >
-                                    <Feather name="minus-circle" size={24} color={colors.primary}/>
+                                    <Feather name="minus-circle" size={24} color={colors.primary} />
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     style={styles.sizeControllerButton}
                                     onPress={increaseFontSize}
                                 >
-                                    <Feather name="plus-circle" size={24} color={colors.primary}/>
+                                    <Feather name="plus-circle" size={24} color={colors.primary} />
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     style={styles.sizeControllerButton}
                                     onPress={resetFontSize}
                                 >
-                                    <Feather name="refresh-ccw" size={22} color={colors.primary}/>
+                                    <Feather name="refresh-ccw" size={22} color={colors.primary} />
                                 </TouchableOpacity>
                             </>
                         )}
@@ -89,17 +89,17 @@ function LyricsScreen({ route }) {
                             style={styles.sizeControllerButton}
                             onPress={enableLyricsSettings}
                         >
-                            <Feather name="settings" size={24} color={colors.primary}/>
+                            <Feather name="settings" size={24} color={colors.primary} />
                         </TouchableOpacity>
                     </View>
                 </View>
                 <ScrollView
-                scrollEnabled={true}
+                    scrollEnabled={true}
                 // onContentSizeChange={onContentSizeChange}
                 >
                     <View style={styles.childContainer}>
                         <View style={styles.lyricsContainer}>
-                            <Text style={[styles.lyricsText, { fontSize: fontSize }]}>{`${lyrics}`}</Text>
+                            <Text style={[styles.lyricsText, { fontSize: fontSize }]}>{`${lyrics.lyrics}`}</Text>
                         </View>
                     </View>
                 </ScrollView>
@@ -107,7 +107,7 @@ function LyricsScreen({ route }) {
         );
     }
 
-    return(
+    return (
         <SafeAreaView style={styles.container}>
             <Header
                 title='Lyrics'
@@ -117,6 +117,7 @@ function LyricsScreen({ route }) {
                 styleTitle={styles.cardTitle}
                 title={song}
                 subtitle={artist}
+                albumArt={lyrics.albumArt}
                 children={cardChildren()}
             />
         </SafeAreaView>

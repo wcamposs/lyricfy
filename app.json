@@ -10,11 +10,11 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.yourcompany.yourappname",
+      "bundleIdentifier": "com.lyricfy.lyricfy",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.yourcompany.yourappname",
+      "package": "com.lyricfy.lyricfy",
       "versionCode": 1
     },
     "splash": {

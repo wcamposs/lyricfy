@@ -12,12 +12,30 @@ Application developed in React Native with Expo and Axios.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-**Cloning the repository:** 
+**Cloning the repository:**
 
 Assuming you have your machine pre-configured to clone github repositories (if you have not configured it, visit [this documentation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)), clone the repository using the following command in the terminal:
 
 ```
 git clone git@github.com:wcamposs/lyricfy.git
+```
+
+**Adding Genius API Key**
+
+To make requests using Genius API, you will need an client token and pass It properly. To create an account and generate your token, visit the [Genius API Documentation](https://docs.genius.com/#/getting-started-h1).
+
+I personally recommend to create an file with token in **src/authToken/authToken.js** to avoid other changes in actual code (I also added the authToken directory to .gitignore).
+
+**authToken.js** example:
+
+```
+const token = {
+    clientId: 'your client id here in string format!',
+    clientKey: 'your client key here in string format!',
+    clientAccessToken: 'your client access token here in string format!',
+};
+
+export default token;
 ```
 
 **Installation and configuration:**
@@ -96,7 +114,7 @@ A new tab will be opened in the default browser with some options to run the pro
 
 3. If you want to run the project on a physical device (Android or iOS):
 
-**Android:** 
+**Android:**
 
 - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the lower left corner on the tab that was automatically opened in the browser using the device's camera.
 
@@ -125,7 +143,7 @@ i
 
 3. If you want to run the project on a physical device (Android or iOS):
 
-**Android:** 
+**Android:**
 
 - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode displayed in the terminal using the device's camera.
 

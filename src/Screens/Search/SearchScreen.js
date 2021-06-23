@@ -4,11 +4,15 @@ import { ActivityIndicator, KeyboardAvoidingView, Text, View } from 'react-nativ
 import { TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { useToast } from 'react-native-styled-toast';
 import { Feather } from '@expo/vector-icons';
+import { getLyrics, getSong, searchSong } from 'genius-lyrics-api';
 
 // js
 import colors from '../../Colors/colors';
 import styles from './styles';
 import api from '../../Services/api';
+
+// Genius API token
+import token from '../../authToken/authToken';
 
 // components
 import Card from '../../Components/BaseComponents/Card';
@@ -16,6 +20,8 @@ import Header from '../../Components/BaseComponents/Header';
 import { Keyboard } from 'react-native';
 
 function SearchScreen({ navigation }) {
+    const { clientAccessToken } = token;
+
     const [artist, setArtist] = useState('');
     const [lyrics, setLyrics] = useState('');
     const [song, setSong] = useState('');
@@ -24,7 +30,7 @@ function SearchScreen({ navigation }) {
 
     const { toast } = useToast();
 
-    useEffect(() => {}, [loading, disabled]);
+    useEffect(() => { }, [loading, disabled]);
 
     useEffect(() => {
         if (lyrics !== '' && lyrics !== undefined) {
@@ -34,13 +40,20 @@ function SearchScreen({ navigation }) {
     }, [lyrics]);
 
     async function getLyrics(artist, song) {
+        const searchOptions = {
+            apiKey: clientAccessToken,
+            title: song,
+            artist: artist,
+            optimizeQuery: true,
+        };
+
         try {
-            const response = await api.get(`/${artist}/${song}`);
-            const results = response.data.lyrics;
-            return results;
+            // const response = await api.get(`/${artist}/${song}`);
+            const response = await getSong(searchOptions);
+            return response;
         }
         catch (error) {
-            return toast({ message: 'Lyrics not found', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: colors.danger }, color: colors.tertiary, iconName: 'frown', iconSize: 26, iconColor: colors.tertiary, closeButtonStyles: { bg: colors.danger}, closeIconColor: colors.tertiary, hideAccent: true});
+            return toast({ message: 'Lyrics not found', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: colors.danger }, color: colors.tertiary, iconName: 'frown', iconSize: 26, iconColor: colors.tertiary, closeButtonStyles: { bg: colors.danger }, closeIconColor: colors.tertiary, hideAccent: true });
         }
     }
 
@@ -58,7 +71,7 @@ function SearchScreen({ navigation }) {
             const responseLyrics = await getLyrics(artist, song);
             setLyrics(responseLyrics);
         } else {
-            return ''
+            return '';
         }
         setLoading(false);
         setDisabled(false);
@@ -70,30 +83,30 @@ function SearchScreen({ navigation }) {
 
     function getLyricsAndNavigate() {
         if (artist !== '' && song !== '') {
-            setDisabled(true)
+            setDisabled(true);
             searchLyrics();
-            if (lyrics !== '' && lyrics !== undefined) {
+            if (lyrics && lyrics !== undefined) {
                 handleNavigateToLyricsPage(artist, song, lyrics);
             }
         } else {
-            return toast({ message: 'You must fill all fields!', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: colors.danger }, color: colors.tertiary, iconName: 'alert-triangle', iconSize: 26, iconColor: colors.tertiary, closeButtonStyles: { bg: colors.danger}, closeIconColor: colors.tertiary, hideAccent: true});
+            return toast({ message: 'You must fill all fields!', messageProps: { fontSize: 18 }, toastStyles: { borderRadius: 16, bg: colors.danger }, color: colors.tertiary, iconName: 'alert-triangle', iconSize: 26, iconColor: colors.tertiary, closeButtonStyles: { bg: colors.danger }, closeIconColor: colors.tertiary, hideAccent: true });
         }
     }
 
     function cleanArtistField() {
-        setArtist('')
+        setArtist('');
     }
 
     function cleanSongField() {
-        setSong('')
+        setSong('');
     }
 
     function dismissKeyboard() {
-        Keyboard.dismiss()
+        Keyboard.dismiss();
     }
 
     function renderSearch() {
-        return(
+        return (
             <View>
                 <View style={styles.fieldsContainer}>
                     <Text style={styles.fieldTitle}>Artist</Text>
@@ -111,7 +124,7 @@ function SearchScreen({ navigation }) {
                                 onPress={cleanArtistField}
                                 style={styles.clearButton}
                             >
-                                <Feather name="x" size={22} color={colors.secondary}/>
+                                <Feather name="x" size={22} color={colors.secondary} />
                             </TouchableOpacity>
                         )}
                     </View>
@@ -131,7 +144,7 @@ function SearchScreen({ navigation }) {
                                 onPress={cleanSongField}
                                 style={styles.clearButton}
                             >
-                                <Feather name="x" size={22} color={colors.secondary}/>
+                                <Feather name="x" size={22} color={colors.secondary} />
                             </TouchableOpacity>
                         )}
                     </View>
@@ -154,7 +167,7 @@ function SearchScreen({ navigation }) {
         );
     }
 
-    return(
+    return (
         <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.container}
