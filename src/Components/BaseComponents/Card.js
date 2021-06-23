@@ -3,7 +3,8 @@ import React from 'react';
 import { Image, Platform, StyleSheet, Text, View } from 'react-native';
 
 // js
-import colors from '../../Colors/colors';
+import colors from '../../global/Colors/colors';
+import fonts from '../../global/Fonts/fonts';
 
 interface Props {
     children: any,
@@ -87,11 +88,11 @@ const styles = StyleSheet.create({
         height: 64,
     },
     title: {
-        fontWeight: 'bold',
+        fontFamily: fonts.title,
         fontSize: 26,
     },
     subtitle: {
-        fontWeight: 'bold',
+        fontFamily: fonts.title,
         fontSize: 15,
     },
 });

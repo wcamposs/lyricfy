@@ -6,7 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 // js
-import colors from '../../Colors/colors';
+import colors from '../../global/Colors/colors';
+import fonts from '../../global/Fonts/fonts';
 
 interface PageHeaderProps {
     title: String,
@@ -24,13 +25,13 @@ const Header: React.FunctionComponent<PageHeaderProps> = ({
         goBack();
     }
 
-    return(
+    return (
         <SafeAreaView style={styles.container}>
             <View style={styles.topBar}>
                 <BorderlessButton
                     onPress={handleGoBack}
                 >
-                    <Feather name="arrow-left" size={30} color={colors.tertiary}/>
+                    <Feather name="arrow-left" size={30} color={colors.tertiary} />
                 </BorderlessButton>
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.logoText}></Text>
@@ -43,7 +44,7 @@ const Header: React.FunctionComponent<PageHeaderProps> = ({
             {children}
         </SafeAreaView>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -57,25 +58,26 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     logoText: {
-    color: colors.tertiary,
-    fontSize: 16,
-    textAlign: 'center',
+        color: colors.tertiary,
+        fontFamily: fonts.text,
+        fontSize: 16,
+        textAlign: 'center',
     },
 
     header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
     },
 
     title: {
-    color: colors.tertiary,
-    fontSize: 24,
-    fontWeight: 'bold',
-    lineHeight: 32,
-    maxWidth: 160,
-    marginRight: 36,
-    marginVertical: 30,
+        color: colors.tertiary,
+        fontSize: 24,
+        fontFamily: fonts.title,
+        lineHeight: 32,
+        maxWidth: 160,
+        marginRight: 36,
+        marginVertical: 30,
     }
 });
 

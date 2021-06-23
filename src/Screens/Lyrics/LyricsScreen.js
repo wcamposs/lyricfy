@@ -4,7 +4,7 @@ import { Dimensions, ScrollView, SafeAreaView, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 // js
-import colors from '../../Colors/colors';
+import colors from '../../global/Colors/colors';
 import styles from './styles';
 
 // components

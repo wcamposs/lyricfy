@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 // js
-import colors from '../../Colors/colors';
+import colors from '../../global/Colors/colors';
+import fonts from '../../global/Fonts/fonts';
 
 const styles = StyleSheet.create({
     container: {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     cardTitle: {
         color: colors.primary,
         fontSize: 26,
-        fontWeight: 'bold',
+        fontFamily: fonts.title,
         lineHeight: 32,
         maxWidth: wp('40%'),
     },
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     },
     lyricsText: {
         color: colors.secondary,
-        fontWeight: 'normal',
+        fontFamily: fonts.text,
     },
 });
 

@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 // js
-import colors from '../../Colors/colors';
+import colors from '../../global/Colors/colors';
+import fonts from '../../global/Fonts/fonts';
 
 const styles = StyleSheet.create({
     container: {
@@ -21,9 +22,11 @@ const styles = StyleSheet.create({
         color: colors.primary,
         fontSize: 28,
         textAlign: 'center',
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
+        fontFamily: fonts.title,
         lineHeight: 32,
         maxWidth: 300,
+        marginTop: 20,
     },
     fieldsContainer: {
         alignItems: 'center',
@@ -45,8 +48,8 @@ const styles = StyleSheet.create({
     },
     fieldTitle: {
         color: colors.primary,
-        fontSize: 22,
-        fontWeight: 'bold',
+        fontSize: 24,
+        fontFamily: fonts.title,
         marginBottom: 10,
     },
     fieldArtistInput: {
@@ -57,8 +60,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         backgroundColor: colors.background,
         color: colors.secondary,
-        fontWeight: 'bold',
-        fontSize: 16,
+        fontFamily: fonts.text,
+        fontSize: 18,
     },
     fieldSongInput: {
         width: 280,
@@ -68,13 +71,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         backgroundColor: colors.background,
         color: colors.secondary,
-        fontWeight: 'bold',
-        fontSize: 16,
+        fontFamily: fonts.text,
+        fontSize: 18,
     },
     textMessage: {
         color: colors.tertiary,
         fontSize: 12,
-        fontWeight: "bold",
+        fontFamily: fonts.title,
     },
     buttonContainer: {
         flexDirection: "row",
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: colors.tertiary,
         fontSize: 20,
-        fontWeight: "bold",
+        fontFamily: fonts.title,
     },
 });
 

@@ -1,5 +1,9 @@
+// libraries
 import { StyleSheet } from 'react-native';
-import colors from '../../Colors/colors';
+
+// js
+import colors from '../../global/Colors/colors';
+import fonts from '../../global/Fonts/fonts';
 
 const styles = StyleSheet.create({
     container: {
@@ -14,8 +18,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 160,
         color: colors.tertiary,
-        fontSize: 60,
-        fontWeight: "bold",
+        fontSize: 80,
+        fontFamily: fonts.title,
     },
     subtitle: {
         alignItems: "center",
@@ -23,18 +27,19 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 16,
         color: colors.tertiary,
-        fontSize: 24,
+        fontSize: 28,
+        fontFamily: fonts.text,
     },
     description: {
         alignItems: "center",
         alignContent: "center",
         textAlign: "center",
         color: colors.tertiary,
-        fontSize: 18,
+        fontSize: 20,
         lineHeight: 30,
         marginTop: 90,
         margin: 40,
-        // fontFamily: "Archivo_400Regular",
+        fontFamily: fonts.text,
     },
     buttonContainer: {
         flexDirection: "row",
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
         height: 70,
         width: 350,
         backgroundColor: colors.tertiary,
-        borderRadius: 32,
+        borderRadius: 12,
         marginLeft: 28,
         alignItems: "center",
         justifyContent: "center",
@@ -55,6 +60,7 @@ const styles = StyleSheet.create({
         color: colors.primary,
         fontSize: 20,
         fontWeight: "bold",
+        fontFamily: fonts.text,
     },
 });
 

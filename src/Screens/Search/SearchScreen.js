@@ -7,7 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import { getLyrics, getSong, searchSong } from 'genius-lyrics-api';
 
 // js
-import colors from '../../Colors/colors';
+import colors from '../../global/Colors/colors';
 import styles from './styles';
 import api from '../../Services/api';
 
