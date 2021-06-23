@@ -56,11 +56,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     buttonText: {
-        // fontFamily: "Archivo_700Bold",
         color: colors.primary,
         fontSize: 20,
         fontWeight: "bold",
-        fontFamily: fonts.text,
+        fontFamily: fonts.title,
     },
 });
 
