@@ -40,7 +40,6 @@ export default function App() {
 
 
   if (!fontsLoaded) {
-    console.log('not loaded');
     return <AppLoading />;
   }
 
