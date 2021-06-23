@@ -152,4 +152,4 @@ i
 - [React Native](https://reactnative.dev/) - The framework used
 - [Expo](https://expo.io/) - Open-source platform used for build and serve the application for Android, iOS, and web.
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
-- [Lyrics Ovh API](https://lyricsovh.docs.apiary.io/) - Api used to obtain lyrics data.
+- [Genius Lyrics API](https://https://docs.genius.com/) - Api used to obtain lyrics data.
