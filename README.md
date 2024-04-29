@@ -2,7 +2,7 @@
 
 Lyrics for you!
 
-![](https://imgur.com/mqlQYyF)
+![App preview](https://imgur.com/mqlQYyF)
 
 ## Description:
 
