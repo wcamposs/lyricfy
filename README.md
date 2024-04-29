@@ -2,7 +2,7 @@
 
 Lyrics for you!
 
-![App preview](https://imgur.com/mqlQYyF)
+![lyricfy](https://github.com/wcamposs/lyricfy/assets/36939543/c2d4d7f9-4b6a-4b38-bfc0-312e574d1806)
 
 ## Description:
 
